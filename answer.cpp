@@ -82,7 +82,7 @@ Answer::Answer(QWidget *parent, QString file, int round, Player *players, int pl
 
     if(sound) {
         musicPlayer->setSource(QUrl::fromLocalFile("sound/jeopardy.wav"));
-        audioOutput->setVolume(100);
+        audioOutput->setVolume(0.5);
         musicPlayer->play();
     }
 #elif QT_VERSION_MAJOR == 5
@@ -299,7 +299,7 @@ void Answer::processSound(QString *answer)
     this->musicPlayer->stop(); // stop default melody
     this->musicPlayer->setAudioOutput(this->audioOutput);
     this->musicPlayer->setSource(QUrl::fromLocalFile(*answer));
-    this->audioOutput->setVolume(100);
+    this->audioOutput->setVolume(1.0);
     this->musicPlayer->play();
 
     QTimer::singleShot(30000, this->musicPlayer, SLOT(stop()));
