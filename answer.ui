@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1920</width>
-    <height>1080</height>
+    <width>1024</width>
+    <height>739</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -18,14 +18,14 @@
   </property>
   <property name="minimumSize">
    <size>
-    <width>1920</width>
-    <height>1046</height>
+    <width>1024</width>
+    <height>739</height>
    </size>
   </property>
   <property name="maximumSize">
    <size>
-    <width>1920</width>
-    <height>1046</height>
+    <width>1024</width>
+    <height>739</height>
    </size>
   </property>
   <property name="cursor">
@@ -45,7 +45,7 @@
    <property name="geometry">
     <rect>
      <x>690</x>
-     <y>960</y>
+     <y>680</y>
      <width>85</width>
      <height>32</height>
     </rect>
@@ -75,7 +75,7 @@
    <property name="geometry">
     <rect>
      <x>10</x>
-     <y>960</y>
+     <y>680</y>
      <width>85</width>
      <height>32</height>
     </rect>
@@ -105,7 +105,7 @@
    <property name="geometry">
     <rect>
      <x>800</x>
-     <y>960</y>
+     <y>680</y>
      <width>85</width>
      <height>32</height>
     </rect>
@@ -136,8 +136,8 @@
     <rect>
      <x>9</x>
      <y>9</y>
-     <width>1920</width>
-     <height>900</height>
+     <width>1024</width>
+     <height>670</height>
     </rect>
    </property>
    <property name="sizePolicy">
@@ -204,8 +204,8 @@
   <widget class="QPushButton" name="buttonCancel">
    <property name="geometry">
     <rect>
-     <x>1800</x>
-     <y>960</y>
+     <x>1024</x>
+     <y>680</y>
      <width>85</width>
      <height>32</height>
     </rect>
@@ -236,8 +236,8 @@
     <rect>
      <x>1</x>
      <y>1</y>
-     <width>1920</width>
-     <height>900</height>
+     <width>1024</width>
+     <height>670</height>
     </rect>
    </property>
    <property name="cursor" stdset="0">
@@ -249,8 +249,8 @@
     <rect>
      <x>9</x>
      <y>9</y>
-     <width>1880</width>
-     <height>900</height>
+     <width>1024</width>
+     <height>670</height>
     </rect>
    </property>
    <property name="cursor">

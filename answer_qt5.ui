@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1920</width>
-    <height>1080</height>
+    <width>1024</width>
+    <height>739</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -18,14 +18,14 @@
   </property>
   <property name="minimumSize">
    <size>
-    <width>1920</width>
-    <height>1046</height>
+    <width>1024</width>
+    <height>739</height>
    </size>
   </property>
   <property name="maximumSize">
    <size>
-    <width>1920</width>
-    <height>1046</height>
+    <width>1024</width>
+    <height>739</height>
    </size>
   </property>
   <property name="cursor">
@@ -136,7 +136,7 @@
     <rect>
      <x>9</x>
      <y>9</y>
-     <width>1920</width>
+     <width>1024</width>
      <height>900</height>
     </rect>
    </property>
@@ -236,7 +236,7 @@
     <rect>
      <x>1</x>
      <y>1</y>
-     <width>1920</width>
+     <width>1024</width>
      <height>900</height>
     </rect>
    </property>

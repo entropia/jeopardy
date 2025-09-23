@@ -50,7 +50,7 @@ Podium::~Podium()
 void Podium::init()
 {
     this->window = new QWidget();
-    this->window->setGeometry(0, 0, 1920, 1046);
+    this->window->setGeometry(0, 0, 1024, 739);
     this->mainGrid = new QGridLayout;
     this->firstGrid = new QGridLayout();
     this->secondThirdGrid = new QGridLayout();

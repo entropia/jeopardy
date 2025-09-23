@@ -65,9 +65,9 @@ public:
     {
         if (gameField->objectName().isEmpty())
             gameField->setObjectName(QString::fromUtf8("gameField"));
-        gameField->resize(1920, 1046);
-        gameField->setMinimumSize(QSize(1920, 1046));
-        gameField->setMaximumSize(QSize(1920, 1046));
+        gameField->resize(1024, 739);
+        gameField->setMinimumSize(QSize(1024, 739));
+        gameField->setMaximumSize(QSize(1024, 739));
         gameField->setMouseTracking(false);
         gameField->setContextMenuPolicy(Qt::CustomContextMenu);
         QIcon icon;
