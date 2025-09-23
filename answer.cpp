@@ -59,6 +59,7 @@ Answer::Answer(QWidget *parent, QString file, int round, Player *players, int pl
     ui->setupUi(this);
 
     this->time = new QElapsedTimer();
+    this->time_so_far = 0;
     this->time->start();
     timer = new QTimer();
     timer->setInterval(1*1000);
@@ -123,7 +124,7 @@ Answer::~Answer()
 
 void Answer::updateTime()
 {
-    int seconds = 31 - this->time->elapsed() / 1000;
+    int seconds = 31 - (this->time->elapsed() + this->time_so_far) / 1000;
     if(seconds >= 0)
         ui->time->setText(QString("%1").arg(std::min(30, seconds), 2));
     else
@@ -391,6 +392,7 @@ void Answer::keyPressEvent(QKeyEvent *event)
 #endif
 
         this->time->start();
+	this->timer->start();
     }
 
     if(event->key() == Qt::Key_Escape)
@@ -425,6 +427,13 @@ void Answer::processKeypress(int player)
         {
             this->musicPlayer->pause();
         }
+#if QT_VERSION_MAJOR == 6
+	this->time_so_far += this->time->elapsed();
+	// std::cout  << this->time_so_far << std::endl ;
+	this->time->invalidate();
+	this->timer->stop();
+#elif QT_VERSION_MAJOR == 5
+#endif
         this->currentPlayer = this->players[player];
         ui->currentPlayer->setText(this->currentPlayer.getName());
 
@@ -553,6 +562,12 @@ void Answer::on_buttonEnd_clicked()
 {
     this->releaseKeyListener();
 
+#if QT_VERSION_MAJOR == 6
+	this->time_so_far += this->time->elapsed();
+	this->time->invalidate();
+	this->timer->stop();
+#elif QT_VERSION_MAJOR == 5
+#endif
     if(this->isVideo == true)
     {
         this->videoPlayer->pause();
@@ -590,6 +605,11 @@ void Answer::on_buttonEnd_clicked()
     {
         musicPlayer->play(); // resume
     }
+#if QT_VERSION_MAJOR == 6
+	this->time->restart();
+	this->timer->start();
+#elif QT_VERSION_MAJOR == 5
+#endif
 }
 
 void Answer::on_buttonRight_clicked()
@@ -641,6 +661,11 @@ void Answer::on_buttonWrong_clicked()
     {
         musicPlayer->play(); // resume
     }
+#if QT_VERSION_MAJOR == 6
+	this->time->restart();
+	this->timer->start();
+#elif QT_VERSION_MAJOR == 5
+#endif
 }
 
 void Answer::on_buttonCancel_clicked()
@@ -655,4 +680,9 @@ void Answer::on_buttonCancel_clicked()
     {
         musicPlayer->play(); // resume
     }
+#if QT_VERSION_MAJOR == 6
+	this->time->restart();
+	this->timer->start();
+#elif QT_VERSION_MAJOR == 5
+#endif
 }
