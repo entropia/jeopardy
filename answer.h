@@ -82,6 +82,7 @@ private:
     int currentPlayerId;
     int winner;
     unsigned int timeStarted;
+    int time_so_far;
     bool keyLock;
     bool isVideo;
     bool sound;
