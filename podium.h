@@ -30,13 +30,15 @@
 #define PODIUM_H
 
 #include <math.h>
-#include <player.h>
 #include <QGridLayout>
 #include <QFile>
 #include <QMessageBox>
 #include <QFileDialog>
 #include <QTextStream>
 #include <QDebug>
+#include "player.h"
+//#include "jeopardy.h"
+#define MY_FONT "Helvetica [Cronyx]"
 
 namespace Ui {
     class Podium;

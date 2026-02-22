@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ui version="5.0">
+<ui version="4.0">
  <class>Answer</class>
  <widget class="QDialog" name="Answer">
   <property name="geometry">
@@ -182,7 +182,7 @@
      <x>740</x>
      <y>530</y>
      <width>208</width>
-     <height>31</height>
+     <height>80</height>
     </rect>
    </property>
    <property name="font">
@@ -204,7 +204,7 @@
   <widget class="QPushButton" name="buttonCancel">
    <property name="geometry">
     <rect>
-     <x>1024</x>
+     <x>910</x>
      <y>680</y>
      <width>85</width>
      <height>32</height>
@@ -231,7 +231,7 @@
     <string>Cancel</string>
    </property>
   </widget>
-  <widget class="QGraphicsView" name="graphicsView">
+    <widget class="QLabel" name="imageView">
    <property name="geometry">
     <rect>
      <x>1</x>
@@ -240,8 +240,8 @@
      <height>670</height>
     </rect>
    </property>
-   <property name="cursor" stdset="0">
-    <cursorShape>WhatsThisCursor</cursorShape>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
    </property>
   </widget>
   <widget class="QVideoWidget" name="videoPlayer">

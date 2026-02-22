@@ -1,20 +1,17 @@
-Jeopardy
-========
+# Jeopardy
 
-* Author:	Christian Lange (Christian_Lange@hotmail.com)
-* Date:		06. February 2014
-* Version:	0.9.6 Stable
-* Github:	https://github.com/chlange/jeopardy
-* Homepage:	http://ganz-sicher.net/chlange
-* License:	New BSD License (3-clause BSD license)
+* Original Author:  Christian Lange (Christian_Lange@hotmail.com)
+* Date:             06. February 2014
+* Version:          0.9.6 Stable
+* Github:           https://github.com/Volker-Weissmann/jeopardy
+* Homepage:         http://ganz-sicher.net/chlange
+* License:          New BSD License (3-clause BSD license)
 
-Description
------------
+# Description
 
 * Implementation of well known Jeopardy! quiz show in C++ with Qt.
 
-Features
---------
+# Features
 
 * up to 9 players
 * sound
@@ -37,35 +34,51 @@ Features
 	* Press Shift to restart sound or video
 * double jeopardy questions 
 	* see answers/README or wiki for further instructions
-* maybe more...
 
+# How to build and run
 
-Todo
-----
+Beware that it will not work if you cd into different directory.
 
-* better score system
-* smoother design
-* ...little here and there
+## ArchLinux
 
-Software used
--------------
+### Using Qt6
 
-* gcc 14.2.1
-* Qt 5.15.14
+* `pacman -S meson qt6-base qt6-multimedia`
+* `meson setup bd -Dqt_version=6`
+* `ninja -C bd`
+* `./bd/jeopardy`
 
-Install
--------
+### Using Qt5
 
-Linux:
-* Install qt4 SDK and libphonon-dev
-* qmake (or qmake-qt4)
-* make
+* `pacman -S meson qt5-base qt5-multimedia`
+* `meson setup bd -Dqt_version=5`
+* `ninja -C bd`
+* `./bd/jeopardy`
 
-Windows:
-* [Follow me](https://github.com/chlange/jeopardy/wiki/Windows)
+## NixOS
 
-Play
-----
+### Using Qt6
+
+* `nix-shell -p pkgs.qt6.full meson ninja`
+* `meson setup bd -Dqt_version=6`
+* `ninja -C bd`
+* `./bd/jeopardy`
+
+### Using Qt5
+
+Note: [Video Playback does not work when using Qt5 on NixOS. I'm sorry.](https://forum.qt.io/topic/162479/qmediaplayer-does-not-work-on-nixos/3)
+
+Note: If you install `qt5Full` and `pkgs.qt6.full`, then building with `-Dqt_version=5` will unfortunately not work.
+
+* `nix-shell -p qt5Full meson ninja`
+* `meson setup bd -Dqt_version=5`
+* `ninja -C bd`
+* `./bd/jeopardy`
+
+## Windows
+* I do not now if it works on Windows, all I could find was [this old link](https://github.com/chlange/jeopardy/wiki/Windows)
+
+# Play
 
 * Edit answers/roundnumber.jrf
 	* see answers/README or wiki for further instructions
@@ -73,8 +86,7 @@ Play
 * Enter names, keys and colors of players
 * Select question
 
-Screenshots
------------
+# Screenshots
 
 Main:
 
@@ -88,7 +100,6 @@ Colored game field:
 
 ![](http://i.imgur.com/AwaO8gd.png)
 
-Bugs? Feature requests? Have some Beer?
-------------------------------------------
+# Bugs? Feature requests? Have some Beer?
 
 Don't hesitate to contact me!

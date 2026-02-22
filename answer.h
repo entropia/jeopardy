@@ -29,19 +29,19 @@
 #ifndef ANSWER_H
 #define ANSWER_H
 
-#include <QElapsedTimer>
 #include <QKeyEvent>
-#include <QSound>
+#include <QMediaPlayer>
 #include <QFile>
 #include <QDir>
-#include <QMediaContent>
-#include <QMediaPlayer>
 #include <QPixmap>
-#include <QTextStream>
 #include <QTimer>
-#include <QTime>
+#include <QElapsedTimer>
 #include <QGraphicsScene>
-#include <doublejeopardy.h>
+#include "doublejeopardy.h"
+
+#if QT_VERSION_MAJOR == 5
+#include <QSound>
+#endif
 
 #define NUMBER_MAX_PLAYERS 9
 #define NUMBER_MAX_CATEGORIES 6
@@ -56,6 +56,10 @@
 namespace Ui {
     class Answer;
 }
+
+class QMediaPlayer;
+class QAudioOutput;
+class QVideoWidget;
 
 class Answer : public QDialog {
     Q_OBJECT
@@ -78,6 +82,7 @@ private:
     int currentPlayerId;
     int winner;
     unsigned int timeStarted;
+    int time_so_far;
     bool keyLock;
     bool isVideo;
     bool sound;
@@ -88,8 +93,29 @@ private:
     QTimer *timer;
     Player *players;
     Player currentPlayer;
+
+#if QT_VERSION_MAJOR == 6
+    QMediaPlayer* musicPlayer;
+    QAudioOutput* audioOutput;
+    QMediaPlayer* videoPlayer;
+    QVideoWidget* videoWidget;
+#elif QT_VERSION_MAJOR == 5
     QSound *music;
     QMediaPlayer *video;
+#else
+    #error "Unsupported Qt Version"
+#endif
+
+#if QT_VERSION_MAJOR == 6
+    QLabel *get_view();
+    QMediaPlayer *get_musicplayer();
+#elif QT_VERSION_MAJOR == 5
+    QGraphicsView *get_view();
+    QSound *get_musicplayer();
+#else
+    #error "Unsupported Qt Version"
+#endif
+
     DoubleJeopardy *dj;
 
     void keyPressEvent(QKeyEvent *event);

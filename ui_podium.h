@@ -10,13 +10,13 @@
 #ifndef UI_PODIUM_H
 #define UI_PODIUM_H
 
-#include <QtCore/QVariant>
-#include <QtWidgets/QAction>
-#include <QtWidgets/QApplication>
-#include <QtWidgets/QButtonGroup>
-#include <QtWidgets/QDialog>
-#include <QtWidgets/QHeaderView>
-#include <QtWidgets/QLabel>
+#include <QVariant>
+#include <QAction>
+#include <QApplication>
+#include <QButtonGroup>
+#include <QDialog>
+#include <QHeaderView>
+#include <QLabel>
 
 QT_BEGIN_NAMESPACE
 
@@ -43,7 +43,7 @@ public:
         third->setSizePolicy(sizePolicy);
         third->setMinimumSize(QSize(331, 171));
         QFont font;
-        font.setFamily(QString::fromUtf8("Andale Mono"));
+        font.setFamily(QString::fromUtf8(MY_FONT));
         font.setPointSize(18);
         font.setBold(true);
         font.setWeight(75);
@@ -68,7 +68,7 @@ public:
         first->setSizePolicy(sizePolicy);
         first->setMinimumSize(QSize(501, 201));
         QFont font1;
-        font1.setFamily(QString::fromUtf8("Andale Mono"));
+        font1.setFamily(QString::fromUtf8(MY_FONT));
         font1.setPointSize(20);
         font1.setBold(true);
         font1.setWeight(75);
@@ -85,7 +85,7 @@ public:
 
     void retranslateUi(QDialog *Podium)
     {
-        Podium->setWindowTitle(QApplication::translate("Podium", "Podium", 0));
+        Podium->setWindowTitle(QApplication::translate("Podium", "Podium"));
         third->setText(QString());
         second->setText(QString());
         first->setText(QString());
