@@ -61,6 +61,12 @@ Linux:
 * qmake (or qmake-qt4)
 * make
 
+Nix/NixOS:
+```bash
+nix-shell
+qmake && make
+```
+
 Windows:
 * [Follow me](https://github.com/chlange/jeopardy/wiki/Windows)
 
