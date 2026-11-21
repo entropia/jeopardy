@@ -17,8 +17,9 @@ pkgs.mkShell {
   ];
 
   # Without this Qt can't find its image format plugins (e.g. JPEG)
+  # and its audio/media backends (QSound, QMediaPlayer)
   shellHook = ''
-    export QT_PLUGIN_PATH=${pkgs.qt5.qtbase.bin}/${pkgs.qt5.qtbase.qtPluginPrefix}''${QT_PLUGIN_PATH:+:$QT_PLUGIN_PATH}
+    export QT_PLUGIN_PATH=${pkgs.qt5.qtbase.bin}/${pkgs.qt5.qtbase.qtPluginPrefix}:${pkgs.qt5.qtmultimedia.bin}/${pkgs.qt5.qtbase.qtPluginPrefix}''${QT_PLUGIN_PATH:+:$QT_PLUGIN_PATH}
     echo "Qt5 dev shell ready. Build with: qmake && make"
   '';
 }
