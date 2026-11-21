@@ -225,7 +225,7 @@ void Answer::processVideo(QString *answer)
     this->isVideo = true;
     this->prependDir(answer);
 
-    video->setMedia(QMediaContent(*answer));
+    video->setMedia(QMediaContent(QUrl::fromLocalFile(*answer)));
     ui->videoPlayer->setVisible(true);
     video->play();
     QTimer::singleShot(30000, video, SLOT(stop()));
