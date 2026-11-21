@@ -59,6 +59,7 @@ Answer::Answer(QWidget *parent, QString file, int round, Player *players, int pl
     ui->videoPlayer->setVisible(false);
     video = new QMediaPlayer();
     video->setVideoOutput(ui->videoPlayer);
+    connect(video, SIGNAL(error(QMediaPlayer::Error)), this, SLOT(videoError()));
 
     if(sound)
         this->music = new QSound("sound/jeopardy.wav");
@@ -229,6 +230,13 @@ void Answer::processVideo(QString *answer)
     ui->videoPlayer->setVisible(true);
     video->play();
     QTimer::singleShot(30000, video, SLOT(stop()));
+}
+
+void Answer::videoError()
+{
+    QMessageBox::critical(this, tr("Error"), tr("Could not play video %1:\n%2")
+                          .arg(video->currentMedia().request().url().toLocalFile())
+                          .arg(video->errorString()));
 }
 
 void Answer::processText(QString *answer)

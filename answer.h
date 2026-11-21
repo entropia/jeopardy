@@ -123,6 +123,7 @@ private slots:
     void on_buttonRight_clicked();
     void on_buttonEnd_clicked();
     void updateTime();
+    void videoError();
 };
 
 #endif // ANSWER_H
