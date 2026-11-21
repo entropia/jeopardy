@@ -193,6 +193,12 @@ void Answer::processImg(QString *answer)
     QGraphicsScene *scene = new QGraphicsScene(ui->graphicsView);
     QPixmap pic(*answer);
 
+    if(pic.isNull())
+    {
+        QMessageBox::critical(this, tr("Error"), tr("Could not load image %1").arg(*answer));
+        return;
+    }
+
     if(pic.height() > ui->graphicsView->height())
         pic = pic.scaledToHeight(ui->graphicsView->height() - 10);
 
