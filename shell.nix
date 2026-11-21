@@ -14,6 +14,10 @@ pkgs.mkShell {
     qt5.qtmultimedia
     qt5.qtxmlpatterns
     libGL
+    gst_all_1.gstreamer
+    gst_all_1.gst-plugins-base
+    gst_all_1.gst-plugins-good
+    gst_all_1.gst-libav
   ];
 
   # Without this Qt can't find its image format plugins (e.g. JPEG)
