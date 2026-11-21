@@ -215,6 +215,12 @@ void Answer::processSound(QString *answer)
 {
     this->prependDir(answer);
 
+    if(!QFile::exists(*answer))
+    {
+        QMessageBox::critical(this, tr("Error"), tr("Could not find sound %1").arg(*answer));
+        return;
+    }
+
     this->sound = true;
     this->music = new QSound(*answer);
     this->music->play();
